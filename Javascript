@@ -1,0 +1,37 @@
+/*This project will assign racers numbers based on age and if they are late or early.*/
+
+//This assigns a random number.
+let raceNumber = Math.floor(Math.random() * 1000);
+
+//We'll set up a variable to determine if we are early, true by default. We can change this to test each case below.
+let isEarly = true;
+
+//Now we set our runner's age. We can change this to test each case below.
+let runnerAge = 19;
+
+//If we are early and over 18, our race number gains 1000.
+if(isEarly && runnerAge > 18)
+  {
+    raceNumber += 1000;
+  }
+
+//We'll now check our age and registration to determine our race time. Early adults race at 9:30.
+if(runnerAge > 18 && raceNumber >= 1000)
+  {
+    console.log(`Greetings, racer ${raceNumber}. Your race will begin at 9:30AM. Good luck!`);
+  }
+//Late adults race at 11.
+else if (runnerAge > 18 && raceNumber < 1000)
+  {
+    console.log(`Greetings, racer ${raceNumber}. Your race will begin at 11AM. Good luck!`)
+  }
+//Those under 18 race at 12:30.
+else if (runnerAge < 18)
+  {
+    console.log(`Greetings, racer ${raceNumber}. Your race will begin at 12:30PM. Good luck!`)
+  }
+//And those who are 18 will need to register at the desk.
+else
+  {
+    console.log('Please see the registration desk.');
+  }
